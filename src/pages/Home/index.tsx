@@ -1,12 +1,17 @@
-import React from "react";
 import { Navigation } from "../../components/Navigation"
-import { Container } from "./styles";
+import { Container, Spacing } from "./styles";
+import { Title } from "../../components/Title";
 
 export const Home = (): JSX.Element => {
 
     return (
         <Container>
             <Navigation />
+        
+            <Spacing>
+             <Title text={"a"} />
+            </Spacing>
+
         </Container>
     );
 

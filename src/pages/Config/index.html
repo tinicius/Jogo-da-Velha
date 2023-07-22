@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla One">
+
+</head>
+
+<body>
+
+
+    <script type="text/javascript" src="script.js"></script>
+
+    <div class="container">
+        <span>Jogo da Velha</span>
+
+        <div class="input-container">
+
+            <label for="player1"></label>
+            <input type="text" id="player1" name="player1" placeholder="Jogador 1">
+
+            <label for="player2"></label>
+            <input type="text" id="player2_container" placeholder="Jogador 2">
+
+            <div class="button-counter">
+                <button type="button" id="decreaseButton" onclick="decrease()">-</button>
+                <span id="numPartidas" name="numPartidas" required>0</span>
+                <button type="button" id="increasebutton" onclick="increase()">+</button>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+            <button class="start-button" onclick="history.back()">Voltar</button>
+            <button class="start-button" onclick="window.location='../Play/index.html'">Iniciar</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

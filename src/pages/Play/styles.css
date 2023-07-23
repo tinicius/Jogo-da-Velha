@@ -23,11 +23,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
-
-    .points {
-        font-size: 50pt;
-    }
+.placar .points {
+    font-size: 50pt;
 }
 
 .round {
@@ -55,27 +54,26 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
-    .row {
-        display: flex;
-        flex-direction: row;
+.main .row {
+    display: flex;
+    flex-direction: row;
+}
 
-        .position {
+.main .row .position {
 
-            display: flex;
+    display: flex;
 
-            font-family: "Fjalla One", sans-serif;
-            font-weight: bold;
-            font-size: 40pt;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: bold;
+    font-size: 40pt;
 
-            align-items: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
 
-            height: 170px;
-            width: 170px;
-        }
-    }
-
+    height: 170px;
+    width: 170px;
 }
 
 .row #ceil-1 {
@@ -109,4 +107,24 @@ body {
 
 .row #ceil-9 {
     border-top: 2px solid black;
+}
+
+.start-button {
+    background-color: black;
+
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-size: 16pt;
+    color: white;
+
+    width: 224px;
+    height: 40px;
+
+    padding: 5px;
+    margin-bottom: 10px;
+
+    border: none;
+    border-radius: 5px;
+
+    text-decoration:  none;
 }

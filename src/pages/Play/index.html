@@ -6,24 +6,25 @@
     <title>Jogar</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla One">
+    <script type="text/javascript" src="./script.js"></script>
 </head>
 
 <body>
- 
+
     <div class="Menu">
 
         <div class="placar">
-            <div class="player">Jogador</div>
-            <div class="points">1</div>
+            <div class="player" id="player1"></div>
+            <div class="points" id="points1">0</div>
         </div>
 
         <div class="round">
-            <span>Rodada 1</span>
+            <span id="roundText" ></span>
         </div>
 
         <div class="placar">
-            <div class="player">Jogador</div>
-            <div class="points">1</div>
+            <div class="player" id="player2" ></div>
+            <div class="points" id="points2">0</div>
         </div>
 
     </div>
@@ -33,26 +34,28 @@
         <div class="tabuleiro">
 
             <div class="row">
-                <div class="position" id="ceil-1">X</div>
-                <div class="position" id="ceil-2">X</div>
-                <div class="position" id="ceil-3">O</div>
+                <div class="position" id="ceil-1" onclick="clickCeil('1');"></div>
+                <div class="position" id="ceil-2" onclick="clickCeil('2');"></div>
+                <div class="position" id="ceil-3" onclick="clickCeil('3');"></div>
             </div>
 
             <div class="row">
-                <div class="position" id="ceil-4">O</div>
-                <div class="position" id="ceil-5">O</div>
-                <div class="position" id="ceil-6">X</div>
+                <div class="position" id="ceil-4" onclick="clickCeil('4');"></div>
+                <div class="position" id="ceil-5" onclick="clickCeil('5');"></div>
+                <div class="position" id="ceil-6" onclick="clickCeil('6');"></div>
             </div>
 
             <div class="row">
-                <div class="position" id="ceil-7">O</div>
-                <div class="position" id="ceil-8">X</div>
-                <div class="position" id="ceil-9">O</div>
+                <div class="position" id="ceil-7" onclick="clickCeil('7');"></div>
+                <div class="position" id="ceil-8" onclick="clickCeil('8');"></div>
+                <div class="position" id="ceil-9" onclick="clickCeil('9');"></div>
             </div>
 
         </div>
 
     </div>
+
+    <button class="start-button" onclick="history.back()">Voltar</button>
 
 </body>
 

@@ -5,8 +5,7 @@ const check = (a, b, c) => {
 
     if (!a || !b || !c) return false;
 
-    if (a == b && b == c) return true;
-    else return false;
+    return (a == b && b == c);
 }
 
 const win = () => {
@@ -22,7 +21,23 @@ const win = () => {
 
     return check(c1, c2, c3) || check(c4, c5, c6) || check(c7, c8, c9) ||
         check(c1, c4, c7) || check(c2, c5, c8) || check(c3, c6, c9) ||
-        check(c1, c5, c9) || check(c3, c5, c7)
+        check(c1, c5, c9) || check(c3, c5, c7);
+
+}
+
+const tie = () => {
+    const c1 = document.getElementById(`ceil-1`).innerText;
+    const c2 = document.getElementById(`ceil-2`).innerText;
+    const c3 = document.getElementById(`ceil-3`).innerText;
+    const c4 = document.getElementById(`ceil-4`).innerText;
+    const c5 = document.getElementById(`ceil-5`).innerText;
+    const c6 = document.getElementById(`ceil-6`).innerText;
+    const c7 = document.getElementById(`ceil-7`).innerText;
+    const c8 = document.getElementById(`ceil-8`).innerText;
+    const c9 = document.getElementById(`ceil-9`).innerText;
+
+    if(c1 && c2 && c3 && c4 && c5 && c6 && c7 && c8 && c9) return true;
+    else return false;
 
 }
 
@@ -55,21 +70,61 @@ const clickCeil = (e) => {
         canPlay = false;
 
         setTimeout(() => {
-            let round = localStorage.getItem('round');
-            localStorage.setItem('round', Number(round) + 1);
-            refreshRound();
-            clean();
-            changePoints();
-            canPlay = true;
-            isPlayerOne = true;
-            isPlayerOne = !isPlayerOne;
-        }, 1000);
+
+            document.getElementById("main").style.display = 'none';
+
+            if (isPlayerOne)
+                document.getElementById("win-text-1").style.display = 'block';
+            else
+                document.getElementById("win-text-2").style.display = 'block';
+
+            setTimeout(() => {
+                let round = localStorage.getItem('round');
+                localStorage.setItem('round', Number(round) + 1);
+                refreshRound();
+                clean();
+                changePoints();
+                canPlay = true;
+
+                isPlayerOne = !isPlayerOne;
+
+                document.getElementById("main").style.display = 'flex';
+                document.getElementById("win-text-1").style.display = 'none';
+                document.getElementById("win-text-2").style.display = 'none';
+            }, 1000);
+
+        }, 600);
+
+    } else if (tie()) {
+
+        console.log(tie());
+
+        setTimeout(() => {
+
+            document.getElementById("main").style.display = 'none';
+
+            document.getElementById("tie-text").style.display = 'block';
+
+            setTimeout(() => {
+                let round = localStorage.getItem('round');
+                localStorage.setItem('round', Number(round) + 1);
+
+                refreshRound();
+                clean();
+
+                canPlay = true;
+
+                isPlayerOne = !isPlayerOne;
+
+                document.getElementById("main").style.display = 'flex';
+                document.getElementById("tie-text").style.display = 'none';
+            }, 1000);
+
+        }, 600);
 
     } else {
         isPlayerOne = !isPlayerOne;
     }
-
-
 }
 
 const refreshRound = () => {

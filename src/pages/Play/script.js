@@ -5,7 +5,10 @@ const check = (a, b, c) => {
 
     if (!a || !b || !c) return false;
 
-    return (a == b && b == c);
+    if (a == b && b == c) return true;
+
+    else return false;
+
 }
 
 const win = () => {
@@ -21,6 +24,7 @@ const win = () => {
 
     return check(c1, c2, c3) || check(c4, c5, c6) || check(c7, c8, c9) ||
         check(c1, c4, c7) || check(c2, c5, c8) || check(c3, c6, c9) ||
+
         check(c1, c5, c9) || check(c3, c5, c7);
 
 }

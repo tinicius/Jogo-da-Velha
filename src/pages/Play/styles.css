@@ -56,6 +56,18 @@ body {
     justify-content: center;
 }
 
+#win-text-1 {
+    display: none;
+}
+
+#win-text-2 {
+    display: none;
+}
+
+#tie-text {
+    display: none;
+}
+
 .main .row {
     display: flex;
     flex-direction: row;
